@@ -6,7 +6,7 @@
 /*   By: ahajji <ahajji@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/22 09:20:16 by ahajji            #+#    #+#             */
-/*   Updated: 2024/08/22 15:04:12 by ahajji           ###   ########.fr       */
+/*   Updated: 2024/08/22 15:07:42 by ahajji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,8 @@ class Span
             int i = 0;
             int shourtTest = std::numeric_limits<int>::max();
             int maxTest = std::numeric_limits<int>::min();
+            if(this->numbers.size() == 0 || this->numbers.size() == 1)
+                throw "dosnt has required numbers\n";
             while(i < numbers.size())
             {
                 if (numbers[i] < shourtTest)
