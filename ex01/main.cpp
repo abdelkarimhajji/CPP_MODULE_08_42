@@ -6,7 +6,7 @@
 /*   By: ahajji <ahajji@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/22 09:15:38 by ahajji            #+#    #+#             */
-/*   Updated: 2024/08/22 12:24:45 by ahajji           ###   ########.fr       */
+/*   Updated: 2024/08/22 15:04:23 by ahajji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,11 @@ int main()
     try
     {
         span.addNumber(1);
-        span.addNumber(2);
-        span.addNumber(3);
-        span.addNumber(4);
-        span.addNumber(4);
+        span.addNumber(10);
+        span.addNumber(-5);
+        span.addNumber(15);
+        std::cout << "\nthis short difrence number : " << span.shortestSpan() << std::endl;
+        std::cout << "this long number : " << span.longestSpan() << std::endl;
         
     }
     catch(const char* e)

@@ -6,7 +6,7 @@
 /*   By: ahajji <ahajji@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/22 09:20:16 by ahajji            #+#    #+#             */
-/*   Updated: 2024/08/22 12:19:49 by ahajji           ###   ########.fr       */
+/*   Updated: 2024/08/22 15:04:12 by ahajji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <iostream>
 #include <vector>
+#include <cstdlib>
 
 class Span
 {
@@ -24,19 +25,44 @@ class Span
     public:
         Span(unsigned int max) : max(max)
         {
-        
+            
         };
         void    addNumber(int number)
         {
-            int i = 0;
-            while (i < this->numbers.size())
-            {
-                if(this->numbers[i] == number)
-                    throw "same number";
-                i++;
-            }
+            if(this->numbers.size() >= this->max)
+                throw "same number\n";
             this->numbers.push_back(number);
         };
+        int    shortestSpan()
+        {
+            int i = 0 ;
+            int shortest = std::numeric_limits<int>::max();
+            if(this->numbers.size() == 0 || this->numbers.size() == 1)
+                throw "dosnt has required numbers\n";
+            
+            while (i < numbers.size() - 1)
+            {
+                if(std::abs(numbers[i] - numbers[i + 1]) < shortest)
+                    shortest = std::abs(numbers[i] - numbers[i + 1]);
+                i++;
+            }
+            return shortest;
+        }
+        int     longestSpan()
+        {
+            int i = 0;
+            int shourtTest = std::numeric_limits<int>::max();
+            int maxTest = std::numeric_limits<int>::min();
+            while(i < numbers.size())
+            {
+                if (numbers[i] < shourtTest)
+                    shourtTest = numbers[i];
+                if (numbers[i] > maxTest)
+                    maxTest = numbers[i];
+                i++;
+            }
+            return (maxTest - shourtTest);
+        }
 };
 
 #endif
