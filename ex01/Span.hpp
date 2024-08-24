@@ -6,7 +6,7 @@
 /*   By: ahajji <ahajji@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/22 09:20:16 by ahajji            #+#    #+#             */
-/*   Updated: 2024/08/24 11:19:37 by ahajji           ###   ########.fr       */
+/*   Updated: 2024/08/24 11:50:49 by ahajji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ class Span
         };
         int    shortestSpan()
         {
-            int i = 0 ;
+            std::vector<int>::size_type i = 0 ;
             int shortest = std::numeric_limits<int>::max();
             if(this->numbers.size() == 0 || this->numbers.size() == 1)
                 throw "dosnt has required numbers\n";
@@ -50,7 +50,7 @@ class Span
         }
         int     longestSpan()
         {
-            int i = 0;
+            std::vector<int>::size_type i = 0;
             int shourtTest = std::numeric_limits<int>::max();
             int maxTest = std::numeric_limits<int>::min();
             if(this->numbers.size() == 0 || this->numbers.size() == 1)
